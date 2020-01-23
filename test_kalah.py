@@ -48,3 +48,13 @@ def test_simple_move(game):
         game2.play(1)
         assert game2.status() == (4, 0, 5, 5, 5, 5, 0, 4, 4, 4, 4, 4, 4, 0)
     # -----------------
+
+
+def test_crossing_move(game):
+    assert game.status() == (4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0)
+    game.play(5)
+    assert game.status() == (4, 4, 4, 4, 4, 0, 1, 5, 5, 5, 4, 4, 4, 0)
+    game.play(9)
+    assert game.status() == (5, 4, 4, 4, 4, 0, 1, 5, 5, 0, 5, 5, 5, 1)
+
+    # -----------------
